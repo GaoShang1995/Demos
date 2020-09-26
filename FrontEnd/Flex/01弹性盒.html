@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒</title>
+
+    <style>
+        *{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        ul{
+            width: 200px;
+            display: flex;
+            border:1px solid red
+        }
+
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+
+        li:nth-child(1){
+            background-color: #bfa;
+        }
+
+        li:nth-child(2){
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        弹性容器：
+            display:flex 设置块级弹性容器
+            display:inline-flex 设置行内弹性容器
+        弹性元素：
+            弹性容器的子元素是弹性元素（直接子元素是弹性元素）
+            一个元素可以同时是弹性容器和弹性元素
+
+            flex-direction:指定伸展方向，设置在容器上
+                row
+                row-reverse
+                column
+                column-reverse
+
+            flex-grow:指定元素增长系数
+                按比例增加;
+                默认为0;
+                设置在元素上
+            
+            flex-shrink:指定元素收缩系数，设置在元素上
+
+            flex-basis:元素基础长度
+                如果主轴指定的是横向的，指定的就是width
+                如果主轴指定的是纵向的，指定的就是height
+                默认值是auto，表示参考元素自身的高度和宽度
+                如果传递了一个数值，则以数值为准
+            
+            简写：flex: 增长、缩减、基础
+                    initial = flex:0 1 auto
+                    auto = flex:1 1 auto
+                    none = flex:0 0 auto
+            flex-wrap:容器内换行规则
+                nowrap
+                wrap
+                wrap-reverse
+            
+            flex-flow: wrap 和 direction的简写
+            例：flex-flow:wrap row
+
+
+            justify-content: 主轴上的元素如何排列，设置在容器上
+                可选值：
+                    flex-start 元素沿着主轴起边排列
+                    flex-end 元素沿着主轴终边排列
+                    center  元素居中排列
+                    space-around 空白分布到元素两侧
+                    space-evenly 空白分布到元素单侧
+                    space-between 空白均匀分不到元素间
+            
+            align-items:元素在辅轴上如何对齐，元素间的关系
+                默认值：stretch 元素长度设置为相同的值
+                flex-start 元素不会拉伸，验证辅轴起边对齐
+                flex-end 沿着辅轴终边对齐
+                center 居中对齐
+                base-line 基线对齐
+
+            align-content:辅轴上的空白空间的分配
+                center 上下空白相等
+                flex-start
+                flex-end
+                space-around
+                sapce-between
+            align-self: 用来覆盖当前元素上的align-items
+
+
+            order:指定弹性元素的顺序
+    -->
+
+    <div>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</body>
+</html>
