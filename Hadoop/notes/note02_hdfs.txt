@@ -1,0 +1,26 @@
+1.hdfs:分布式文件系统
+    主从架构
+    nameNode:管理数据的元数据信息
+    secondaryNameNode:辅助nameNode
+    dataNode:存放数据
+2.MapReduce:分布式计算系统
+    主从架构 1.0
+    JobTracker:接收计算任务，分配给taskNode
+    TaskTracker:实际进行计算
+
+    主从架构2.0
+    第一种：NameNode和ResourceManager单节点架构模型
+    ResourceManager:负责接受请求，并进行子资源分配，通过appManager计算所需资源，由appManager去寻找相应的服务器计算，最后汇总结果到ResourceManager
+    NodeManager:负责执行主节点APPMaster分配的任务
+
+    第二种：NameNode单节点和ResourceManage高可用架构模型
+    hdfs没什么区别
+    ResourceManager有备份，主ResourceManager宕机，备份Manager立刻替换生效
+    同时还有Zookeeper进行监控ZKFC，通过监控主ResourceManager状态
+
+    第三种：NameNode高可用和ResoucreManager单节点架构模型
+    多个NameNode,同时使用Zookeeper监控
+    存在JournalNode：元数据信息管理
+
+    第四种：NameNode高可用和RescoureManager高可用
+    学习使用第一种架构

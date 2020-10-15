@@ -2,9 +2,12 @@ package com.gaoshang.reflection01;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * @Author GaoShang
@@ -77,7 +80,55 @@ public class Reflection01 {
 
     }
 
+
+    /*
+     * @description: 通过类加载器加载配置文件
+     * @author Gaoshang
+     * @date 2020/10/9
+     * @email gs_nuaa@163.com
+     */
+    @Test
+    public void getPropertiesByClassLoader() throws IOException {
+        ClassLoader classLoader = Reflection01.class.getClassLoader();
+        System.out.println(classLoader);
+        InputStream inputStream = classLoader.getResourceAsStream("jdbc.properties");
+        Properties properties = new Properties();
+        properties.load(inputStream);
+        System.out.println(properties.getProperty("test"));
+    }
+
+    @Test
+    public void getRuntimeClassInstance() throws IllegalAccessException, InstantiationException {
+        Class<Person> personClass = Person.class;
+        Object object = personClass.newInstance();
+        System.out.println(object);
+    }
+
+    @Test
+    public void treeMapSort(){
+        TreeMap map = new TreeMap(new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                String s1 = (String) o1;
+                String s2 = (String) o2;
+                return s1.compareTo(s2);
+            }
+        });
+        map.put("1",1);
+        map.put("3",2);
+        map.put("5",3);
+        map.put("4",4);
+
+        Set entrySet = map.entrySet();
+        Iterator iterator=entrySet.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+    }
 }
+
+
 
 /**
  * @description: Person Class

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    // function fun(){
+    //     // alert("我是fun函数")
+    //     alert(arguments[0]);
+    //     alert(arguments[1]);
+    //     alert(arguments[2]);
+    // }
+
+
+    // fun(1,2);
+    // // fun.call();
+    // // fun.apply();
+
+    // function getDate(){
+    //     var date = new Date();
+    //     var year = date.getFullYear();
+    //     var month = date.getMonth()+1;
+    //     var day = date.getDay();
+    //     alert([year,month,day].join("-"));
+    // }
+    // getDate();
+    
+
+    // function getMaxRandom(){
+    //     var max = 0;
+    //     for(var i = 0 ; i < 10 ; i++){
+    //         var temp = Math.round((Math.random()*10+10));
+    //         console.log(temp);
+    //         if(temp > max){
+    //             max = temp;
+    //         }
+    //     }
+
+    //     console.log("最大值是："+max);
+    
+    // }
+
+    // getMaxRandom();
+
+    function isReverse(a){
+
+        var s = a.split("").reverse().join("");
+        if(s == a){
+            alert("是");
+        }else{
+            alert("不是")
+        }
+    }
+    isReverse("abcba");
+</script>

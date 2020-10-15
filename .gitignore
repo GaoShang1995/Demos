@@ -1,4 +1,4 @@
 **/.idea
 **/.iml
-ReflectionDemo/target/
-Hadoop/ZookeeperDemo/target
+/.iml
+target/

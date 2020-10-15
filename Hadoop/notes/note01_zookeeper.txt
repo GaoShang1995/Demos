@@ -1,0 +1,27 @@
+1.本质上是分布式文件系统，解决数据一致性问题。适合存放小文件，也可以理解为一共数据库
+2.Zookeeper本身也是一个集群
+3.znode节点既可以存放数据，也可以作为路径：包含三个部分 stat、data、children
+  每个znode的路径是唯一的，必须是绝对路径
+4.节点分为两种：
+    临时节点：依赖于会话，场景：心跳检测
+    永久节点：不依赖于会话，显式删除才会消失
+    znode还有一共序列化的特点，如果创建的时候指定的话，会在znode名字后面自动追加一个递增的10位数序列
+    根据是否序列化，临时节点和永久节点也各自分为两种
+    PERSISTENT:永久节点
+    EPHEMERAL:临时节点
+    PERSISTENT_SEQUENTIAL:永久节点、序列化
+    EPHEMERAL_SEQUENTIAL:临时节点、序列化
+5.创建节点的命令:
+    create [-s] [-e] path data
+    set path data
+    get path data:
+        dataVersion:数据版本号
+        cversion:子节点的版本号
+        aclVersion:ACL的版本号
+        cZxid:Znode创建事务的id
+        mZxid:Znode被修改的事务id
+        ctime:节点创建的时间戳
+        mtime:节点最新一次更新的时间戳
+        ephemeralOwner:如果该节点为临时节点，该值表示与该节点绑定的session id,如果不是临时节点，该值为0
+6.Watch机制
+        对某个Znode设置Watcher,当Znode发生变化的时候，WatchManage会调用对应的Watcher
