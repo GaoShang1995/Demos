@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- <form>
+            <button type="submit" onclick="fn1()" onsubmit="fn2()" >提交</button>
+        </form> -->
+</body>
+</html>
+<script>
+
+    // function fn1(){
+    //     alert(1);
+    //     console.log(1);
+    // }
+    // function fn2(){
+    //     alert(2);
+    //     console.log(2);
+    // }
+    // function fn3(){
+    //     alert(3);
+    //     console.log(3);
+    // }
+    // function fn4(){
+    //     alert(4);
+    //     console.log(4);
+    // }
+
+    // var a=1.6; 
+    // result=parseInt(a)+parseFloat(a);
+    // console.log(result);
+    // var d = new Date();
+    // alert(d.getMonth()+1);
+    // var num;
+    // num = 5 + true;
+    // console.log(num);
+    // setTimeout(function(){
+    //     alert(1)
+    // },1000);
+    // alert(2);
+    // setTimeout(function(){
+    //     alert(3)
+    // },0);
+    // alert(4);
+
+    // setTimeout(function(){
+    //     console.log(1)
+    // },1000);
+    // console.log(2);
+    // setTimeout(function(){
+    //     console.log(3)
+    // },0);
+    // console.log(4);
+    // var a = 6;
+    // var b = function(){
+    //     var a = 6;
+    //     return function(){
+    //         var a = 7;
+    //         return a+6;
+    //     }
+    // }
+
+    // a = b()();
+    // alert(a);
+
+//     var a = 6;
+// var b = function(){
+// var a = 6;
+// return function(){
+// return a+6;
+// }
+// }
+// a = b()();
+// alert(a);
+
+var F = function(){console.log(1)}
+Object.prototype.a = function(){console.log(2)}
+Function.prototype.b = function(){console.log(3)}
+F();
+F.a();
+F.b();
+</script>

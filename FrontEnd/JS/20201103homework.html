@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+    function createAnimal(type){
+        
+        if(type.toLowerCase() == "dog" && arguments.length == 4 ){
+            return new Dog(arguments[1],arguments[2],arguments[3]);
+        }else if(type.toLowerCase() == "cat" && arguments.length == 3){
+            return new Cat(arguments[1],arguments[2]);
+        }else{
+            alert ("创建不合法");
+        }
+
+    }
+
+    function Dog(name,age,move){
+        this.name = name;
+        this.age = age;
+        this.move = move;
+        this.show = function(){
+            console.log(name + age + move);
+        }
+    }
+
+    function Cat(name,move){
+        this.name = name;
+        this.move = move;
+        this.sleep = function(){
+            console.log(name + "is sleeping");
+        }
+    }
+
+    var dog = createAnimal("Dog","汪汪",15,"run");
+    var cat = createAnimal("Cat","kitty",16);
+    
+    dog.show();
+    cat.sleep();
+    console.log(dog instanceof Dog);
+    console.log(cat instanceof Cat);
+
+</script>

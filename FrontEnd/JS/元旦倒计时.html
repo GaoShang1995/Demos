@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+</body>
+</html>
+<script>
+    var counter = function(){
+
+            var date = new Date();
+            
+            var year = date.getFullYear();
+            var date2 = new Date(year,11,31,23,59,59);
+            
+            /*转换成秒*/
+            var time = (date2-date)/1000;
+            var day = Math.floor(time/(24*60*60));
+            var hour = Math.floor(time%(24*60*60)/(60*60));
+            var minute = Math.floor(time%(24*60*60)%(60*60)/60);
+            var second = Math.floor(time%(24*60*60)%(60*60)%60);
+            var str = year +"年还剩：" + day + "天" + hour + "时" + minute + "分" + second + "秒";
+            var div = document.getElementById("show");
+            div.innerHTML = str;
+
+    }
+
+    var timer = setInterval(counter,1000);
+</script>

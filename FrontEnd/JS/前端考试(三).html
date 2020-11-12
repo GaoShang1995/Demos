@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // function test(){
+    //     alert("hello");
+    // }
+    // setInterval
+    // setTimeout(
+    //     alert("hello")
+    // ,3000);
+    //     document.get
+    // alert(typeof undefined == "undefined");
+    // alert(typeof null );
+    // alert(typeof "hello");
+    // alert(typeof true);
+    // alert(typeof [1,2,3] == "object");
+    
+    // alert(typeof NaN == "number");
+    // alert(typeof{name:"李华",age:"23"}=="object");
+    // for (var i = 0; i < 3; i++) {
+    // setTimeout(function () {
+    //     alert(i);
+    // }, 1);
+    function Foo() {
+    getName = function () {
+        console.log(1);
+    };
+    return this;
+}
+Foo.getName = function () {
+    console.log(2);
+}
+var getName = function () {
+    console.log(4);
+};
+Foo.getName();
+getName();
+Foo().getName();
+getName();
+// }
+    
+</script>

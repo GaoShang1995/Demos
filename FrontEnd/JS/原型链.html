@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+// function Fun(){
+//     this.test1 = function(){
+//         console.log("test1()");
+//     }
+// }
+
+// Fun.prototype.test2 = function(){
+//     console.log("test2()");
+// }
+
+// var fun = new Fun();
+// fun.test1();
+// fun.test2();
+// console.log(fun.toString());
+// fun.test3();
+
+
+
+// function myFun(){};
+// Object.prototype.a =  function(){
+// console.log("a");
+// }
+
+// Function.prototype.b= function(){
+// console.log("b");
+// }
+//  var f = new myFun();
+
+//  f.a();
+// //  f.b();
+//  myFun.a();
+//  myFun.b();
+
+// function fn(){
+//     console.log(5);
+//     fn();
+// }
+// fn();
+// var b = 16;
+// var a = function(fn){
+//     b = 15;
+//     console.log(b);
+//     fn();
+// }
+
+// function fn(){
+//     var b = 16;
+//     console.log(b);
+// }
+// a(fn)
+var b = 16;
+var a = function(fn){
+b = 15;
+console.log(b);
+fn();
+}
+
+function fn(){
+console.log(b);
+}
+a(fn)
+</script>

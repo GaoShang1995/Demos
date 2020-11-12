@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    // console.log($);
+    $(function(){//绑定文档加载完成的监听
+        // console.log("--------------");
+        //返回的jQuery对象
+        $("#div1").click(function(){ //绑定事件监听
+            // alert(this); //this指向的发生事件的DOM
+            //读写合一
+            // alert($(this).html());
+            $(this).html(1);
+        })
+
+        var $buttons = $('button');
+        console.log($buttons.length);
+        console.log($buttons);
+
+        // $buttons.each((index,element) =>{
+        //     console.log(element.innerHTML,this);
+        // })
+
+        $buttons.each(function(index,element){
+            console.log(element.innerHTML,this.innerHTML);
+        })
+
+        console.log($("#btn3").index());
+
+        //伪数组
+        // console.log($buttons instanceof Array);
+
+        // $("#div1").css({"background-color":"red"})
+        $("button").css({"background-color":"green"})
+
+        $("box").css({"background-color":"blue","width":"100px","height":"20px"})
+
+
+    })
+
+    var arr = [1,2,3,4,5,6]
+    $.each(arr,(index,element) =>{
+        console.log(index + "的元素是" + element);
+    })
+    // console.log('+++++++++++++++++++++');
+</script>
+<style>
+    #div1{
+        width: 100px;
+        height: 100px;
+        background-color: #bfa;
+    }
+
+    #box1{
+        color:red;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+    <div id="div1"></div>
+    <button id="btn1">btn1</button>
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
+    <button id="btn4">btn4</button>
+    <button id="btn5">btn5</button>
+    <span></span>
+    <box id="box1"></box>
+</body>
+</html>

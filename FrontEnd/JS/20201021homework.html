@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #div1{
+        width:100px;
+        height:100px;
+        background-color: #bfa;
+        position: absolute;
+    }
+</style>
+<body>
+    <div id="div1"></div>
+</body>
+</html>
+
+<script>
+    // window.onload= function(){
+    //     var div1 = document.getElementById("div1");
+    //     document.onkeydown = function(event){
+            
+    //         // console.log(event.keyCode);
+    //         // alert(event.keyCode);
+    //         event = event || window.event;
+    //         // 37左 38上 39右 40下
+    //         switch(event.keyCode){
+    //             case 37://向左
+    //                 div1.style.left = div1.offsetLeft - 10 + "px";
+    //                 break;
+    //             case 39://向右
+    //                 div1.style.left = div1.offsetLeft + 10 + "px";
+    //                 break;
+    //             case 38: //向上
+    //                 div1.style.top = div1.offsetTop - 10 + "px";
+    //                 break;
+    //             case 40:
+    //                 div1.style.top = div1.offsetTop + 10 +"px";
+    //                 break;
+    //         }
+
+    //     }
+    // };
+
+    window.onload = function(){
+
+        function getRandomColor(){
+            var r = Math.round(Math.random()*256);
+            var g = Math.round(Math.random()*256);
+            var b = Math.round(Math.random()*256);
+
+            return {red:r,green:g,blue:b};
+        }
+        var div1 = document.getElementById("div1");
+    
+        div1.onmousewheel = function(event){
+            event = event || window.event;
+            var obj = getRandomColor();
+            div1.style.backgroundColor = "rgb("+ obj.red +","+obj.green+","+obj.blue+")";
+            
+            
+
+        }
+        bind(div1,"DOMMouseScorll",div1.onmousewheel);
+
+        function bind(obj,eventStr,callback){
+            if(obj.addEventListener){
+                obj.addEventListener(eventStr,callback,false);
+            }else{
+                obj.attachEvent(eventStr,callback)
+            }
+        }
+
+    }
+
+</script>

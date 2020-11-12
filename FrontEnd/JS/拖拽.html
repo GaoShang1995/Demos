@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height:100px;
+        background-color: #bfa;
+        position: absolute;
+    }
+</style>
+<body>
+    <div>jjjjjjj</div>
+    <div id="box">
+
+    </div>
+</body>
+</html> 
+<script>
+
+    var boxEle = document.getElementById("box");
+
+
+    //点击，开始移动
+    boxEle.onmousedown=function(event){
+
+        //计算鼠标的偏移
+        event = event || window.event;
+        var left = event.clientX - boxEle.offsetLeft;
+        var top = event.clientY - boxEle.offsetTop;
+        
+        document.onmousemove = function(event){
+            event = event || window.event
+            var x = event.clientX - left;
+            var y = event.clientY - top;
+
+
+           
+            //修改box的位置
+            boxEle.style.left = x +"px";
+            boxEle.style.top = y +"px";
+
+        }
+    }
+
+    //鼠标松开
+    // boxEle.addEventListener("mouseup",function(){
+    //     boxEle.onmousemove = null;
+    // },false)
+    boxEle.onmouseup = function(){
+        document.onmousemove = null;
+        document.onmouseup = null;
+        return false;
+    }
+</script>
